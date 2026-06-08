@@ -1,0 +1,21 @@
+type HttpRequestResult = 
+ record {
+   body: blob;
+   headers: vec HttpHeader;
+   status: nat;
+ };
+type HttpHeader = 
+ record {
+   name: text;
+   value: text;
+ };
+service : {
+  fetchSheetData: () -> (variant {
+                           err: text;
+                           ok: text;
+                         });
+  transform: (raw: record {
+                     context: blob;
+                     response: HttpRequestResult;
+                   }) -> (HttpRequestResult);
+}

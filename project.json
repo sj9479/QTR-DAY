@@ -1,0 +1,21 @@
+{
+  "overview": "A dashboard that fetches data from a shared Google Sheet CSV, lets users filter by date range, and compare metrics against the same day in previous weeks.",
+  "features": [
+    "Live Google Sheet data via CSV",
+    "Date range picker",
+    "Same-day previous-week comparison",
+    "Summary metric cards",
+    "Time-series chart with overlays",
+    "Sortable data table"
+  ],
+  "category": "productivity",
+  "tags": [
+    "dashboard",
+    "google-sheets",
+    "csv",
+    "data-visualization",
+    "charts",
+    "date-range"
+  ],
+  "last_updated": "2026-04-21T12:52:33.771Z"
+}

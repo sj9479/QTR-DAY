@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: "Geist Mono";
+    --radius: 0.5rem;
+
+    --background: 0.99 0.005 260;
+    --foreground: 0.15 0.01 260;
+    --card: 1.0 0.0 0;
+    --card-foreground: 0.15 0.01 260;
+    --popover: 1.0 0.0 0;
+    --popover-foreground: 0.15 0.01 260;
+
+    --primary: 0.45 0.2 265;
+    --primary-foreground: 0.98 0.005 265;
+
+    --secondary: 0.95 0.01 260;
+    --secondary-foreground: 0.25 0.01 260;
+    --muted: 0.95 0.01 260;
+    --muted-foreground: 0.5 0.01 260;
+
+    --accent: 0.45 0.2 265;
+    --accent-foreground: 0.98 0.005 265;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 25;
+
+    --border: 0.9 0.01 260;
+    --input: 0.9 0.01 260;
+    --ring: 0.45 0.2 265;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.98 0.005 260;
+    --sidebar-foreground: 0.15 0.01 260;
+    --sidebar-primary: 0.45 0.2 265;
+    --sidebar-primary-foreground: 0.98 0.005 265;
+    --sidebar-accent: 0.95 0.01 260;
+    --sidebar-accent-foreground: 0.25 0.01 260;
+    --sidebar-border: 0.9 0.01 260;
+    --sidebar-ring: 0.45 0.2 265;
+  }
+
+  .dark {
+    --background: 0.145 0.014 260;
+    --foreground: 0.95 0.01 260;
+    --card: 0.18 0.014 260;
+    --card-foreground: 0.95 0.01 260;
+    --popover: 0.18 0.014 260;
+    --popover-foreground: 0.95 0.01 260;
+
+    --primary: 0.75 0.15 190;
+    --primary-foreground: 0.145 0.014 260;
+
+    --secondary: 0.22 0.02 260;
+    --secondary-foreground: 0.85 0.01 260;
+    --muted: 0.22 0.02 260;
+    --muted-foreground: 0.55 0.01 260;
+
+    --accent: 0.75 0.15 190;
+    --accent-foreground: 0.145 0.014 260;
+
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.95 0.01 25;
+
+    --border: 0.28 0.02 260;
+    --input: 0.28 0.02 260;
+    --ring: 0.75 0.15 190;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.18 0.014 260;
+    --sidebar-foreground: 0.95 0.01 260;
+    --sidebar-primary: 0.75 0.15 190;
+    --sidebar-primary-foreground: 0.145 0.014 260;
+    --sidebar-accent: 0.22 0.02 260;
+    --sidebar-accent-foreground: 0.85 0.01 260;
+    --sidebar-border: 0.28 0.02 260;
+    --sidebar-ring: 0.75 0.15 190;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-elevated {
+    @apply bg-card border border-border rounded-lg shadow-xs;
+  }
+
+  .input-field {
+    @apply bg-input border border-border rounded-md px-3 py-2 text-foreground placeholder:text-muted-foreground transition-smooth;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md font-semibold transition-smooth hover:opacity-90;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-md font-semibold transition-smooth hover:opacity-90;
+  }
+}

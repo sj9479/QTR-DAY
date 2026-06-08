@@ -1,0 +1,32 @@
+// Version: 1.0.0
+type HttpHeader__837997805 = {name : Text; value : Text};
+type HttpRequestArgs__893152371 =
+  {
+    body : ?Blob;
+    headers : [HttpHeader__837997805];
+    is_replicated : ?Bool;
+    max_response_bytes : ?Nat64;
+    method : {#get; #head; #post};
+    transform :
+      ?{
+         context : Blob;
+         function :
+           shared {context : Blob; response : HttpRequestResult__1015898249} ->
+             async HttpRequestResult__1015898249
+       };
+    url : Text
+  };
+type HttpRequestResult__1015898249 =
+  {body : Blob; headers : [HttpHeader__837997805]; status : Nat};
+actor {
+  stable CACHE_TTL_NS : Int;
+  stable IC :
+    actor {
+      http_request :
+        shared HttpRequestArgs__893152371 ->
+          async HttpRequestResult__1015898249
+    };
+  stable SHEET_CSV_URL : Text;
+  stable var cacheTimestamp : Int;
+  stable var cachedCsv : Text
+};
